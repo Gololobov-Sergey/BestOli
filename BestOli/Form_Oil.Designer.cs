@@ -45,17 +45,15 @@
             cBox_Name_gasoline = new ComboBox();
             lName_gasoline = new Label();
             gBox_Kafe = new GroupBox();
+            panel1 = new Panel();
             groupBox1 = new GroupBox();
             label5 = new Label();
-            tBox_payable_kafe = new TextBox();
             gBox_Price = new GroupBox();
             but_payable = new Button();
             label6 = new Label();
             tBox_payable = new TextBox();
             tBox_payable_пф = new TextBox();
-            checkBox1 = new CheckBox();
-            textBox1 = new TextBox();
-            numericUpDown3 = new NumericUpDown();
+            label7 = new Label();
             gBox_Gas_station.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -63,7 +61,6 @@
             gBox_Kafe.SuspendLayout();
             groupBox1.SuspendLayout();
             gBox_Price.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             SuspendLayout();
             // 
             // gBox_Gas_station
@@ -247,9 +244,7 @@
             // gBox_Kafe
             // 
             gBox_Kafe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            gBox_Kafe.Controls.Add(numericUpDown3);
-            gBox_Kafe.Controls.Add(textBox1);
-            gBox_Kafe.Controls.Add(checkBox1);
+            gBox_Kafe.Controls.Add(panel1);
             gBox_Kafe.Controls.Add(groupBox1);
             gBox_Kafe.Location = new Point(470, 21);
             gBox_Kafe.Name = "gBox_Kafe";
@@ -258,11 +253,19 @@
             gBox_Kafe.TabStop = false;
             gBox_Kafe.Text = "Кафе";
             // 
+            // panel1
+            // 
+            panel1.AutoScroll = true;
+            panel1.Location = new Point(13, 38);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(393, 209);
+            panel1.TabIndex = 17;
+            // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(tBox_payable_kafe);
             groupBox1.Location = new Point(13, 282);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(395, 117);
@@ -278,17 +281,6 @@
             label5.Size = new Size(33, 20);
             label5.TabIndex = 16;
             label5.Text = "грн";
-            // 
-            // tBox_payable_kafe
-            // 
-            tBox_payable_kafe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            tBox_payable_kafe.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            tBox_payable_kafe.Location = new Point(132, 26);
-            tBox_payable_kafe.Name = "tBox_payable_kafe";
-            tBox_payable_kafe.ReadOnly = true;
-            tBox_payable_kafe.Size = new Size(222, 70);
-            tBox_payable_kafe.TabIndex = 12;
-            tBox_payable_kafe.TextAlign = HorizontalAlignment.Right;
             // 
             // gBox_Price
             // 
@@ -341,29 +333,15 @@
             tBox_payable_пф.Size = new Size(222, 70);
             tBox_payable_пф.TabIndex = 12;
             // 
-            // checkBox1
+            // label7
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(13, 52);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
-            checkBox1.TabIndex = 15;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(145, 49);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(79, 27);
-            textBox1.TabIndex = 16;
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(243, 52);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(68, 27);
-            numericUpDown3.TabIndex = 3;
+            label7.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(177, 43);
+            label7.Name = "label7";
+            label7.Size = new Size(177, 60);
+            label7.TabIndex = 18;
+            label7.Text = "0.00";
+            label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Form_Oli
             // 
@@ -384,12 +362,10 @@
             gBox_Price_gasoline.ResumeLayout(false);
             gBox_Price_gasoline.PerformLayout();
             gBox_Kafe.ResumeLayout(false);
-            gBox_Kafe.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             gBox_Price.ResumeLayout(false);
             gBox_Price.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ResumeLayout(false);
         }
 
@@ -413,15 +389,13 @@
         private TextBox tBox_payable_пф;
         private GroupBox groupBox1;
         private Label label5;
-        private TextBox tBox_payable_kafe;
         private Label label6;
         private TextBox tBox_payable;
         private Button but_payable;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
         private Label tBox_payable_gasoline;
-        private NumericUpDown numericUpDown3;
-        private TextBox textBox1;
-        private CheckBox checkBox1;
+        private Panel panel1;
+        private Label label7;
     }
 }
