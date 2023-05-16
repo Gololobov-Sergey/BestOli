@@ -31,59 +31,50 @@ namespace BestOli
             tBox_Price_gasoline.Text = oils[index].Price.ToString();
         }
 
-        private void tBox_number_gasoline_TextChanged(object sender, EventArgs e)
-        {
-            if (tBox_number_gasoline.Text != "")
-            {
-                string pattern = @"^\d{1,5}.?\d?\d?$";
-                Regex regex = new Regex(pattern);
-                if (!regex.IsMatch(tBox_number_gasoline.Text))
-                {
-                    tBox_number_gasoline.Text = tBox_number_gasoline.Text.Remove(tBox_number_gasoline.Text.Length - 1);
-                    tBox_number_gasoline.SelectionStart = tBox_number_gasoline.Text.Length;
-                }
-                calcSumGasoline();
-            }
-        }
-
-        private void tBox_sum_gasoline_TextChanged(object sender, EventArgs e)
-        {
-            calcSumGasoline();
-        }
-
         private void rB1_number_gasoline_CheckedChanged(object sender, EventArgs e)
         {
-            tBox_number_gasoline.Enabled = rB1_number_gasoline.Checked;
-            tBox_sum_gasoline.Text = "";
+            numericUpDown1.Enabled = rB1_number_gasoline.Checked;
+            numericUpDown2.Value = 0;
         }
 
         private void rB_sum_gasoline_CheckedChanged(object sender, EventArgs e)
         {
-            tBox_sum_gasoline.Enabled = rB_sum_gasoline.Checked;
-            tBox_number_gasoline.Text = "";
+            numericUpDown2.Enabled = rB_sum_gasoline.Checked;
+            numericUpDown1.Value = 0;
         }
 
 
         void calcSumGasoline()
         {
             decimal sumGas = 0;
+            decimal volume = 0;
             if (rB1_number_gasoline.Checked)
             {
-                sumGas = Convert.ToDecimal(tBox_sum_gasoline.Text) *
+                sumGas = numericUpDown1.Value *
                     Convert.ToDecimal(tBox_Price_gasoline.Text);
-
+                numericUpDown2.Value = sumGas;
             }
             if (rB_sum_gasoline.Checked)
             {
-                decimal volume = Convert.ToDecimal(tBox_sum_gasoline.Text) /
+                volume = numericUpDown2.Value /
                     Convert.ToDecimal(tBox_Price_gasoline.Text);
-                tBox_number_gasoline.Text = volume.ToString();
+                numericUpDown1.Value = volume;
+
+                sumGas = numericUpDown2.Value;
             }
 
-            tBox_payable_gasoline.Text = sumGas.ToString();
+            tBox_payable_gasoline.Text = Math.Round(sumGas, 2).ToString();
         }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            calcSumGasoline();
+        }
 
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            calcSumGasoline();
+        }
     }
 
     internal class Oil
