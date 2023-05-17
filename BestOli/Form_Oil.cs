@@ -1,10 +1,11 @@
+using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 
 namespace BestOli
 {
     public partial class Form_Oli : Form
     {
-        List<Oil> oils = new List<Oil>();
+        ObservableCollection<Oil> oils = new ObservableCollection<Oil>();
         List<Product> products = new List<Product>();
 
         List<RecordsProduct> records = new List<RecordsProduct>();
@@ -24,7 +25,10 @@ namespace BestOli
             products.Add(new Product { Name = "Булочка", Price = 8M });
             products.Add(new Product { Name = "Кока-Кола", Price = 15M });
 
-            cBox_Name_gasoline.Items.AddRange(oils.Select(o => o.Name).ToArray());
+            cBox_Name_gasoline.DataSource = oils;
+            cBox_Name_gasoline.DisplayMember = "Name";
+            //cBox_Name_gasoline.Items.AddRange(oils.Select(o => o.Name).ToArray());
+
             cBox_Name_gasoline.SelectedIndex = 0;
 
             for (int i = 0; i < products.Count; i++)
@@ -137,6 +141,18 @@ namespace BestOli
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             calcSumGasoline();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            Form_changes f = new Form_changes();
+            f.Name = "Add";
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                oils.Add(new Oil { Name = f.Name, Price = f.Price });
+                cBox_Name_gasoline.DataSource = oils;
+                cBox_Name_gasoline.Refresh();
+            }
         }
     }
 

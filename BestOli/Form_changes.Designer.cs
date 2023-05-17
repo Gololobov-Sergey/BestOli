@@ -28,93 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.tBox_Name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tBox_price = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.but_save = new System.Windows.Forms.Button();
-            this.but_censel = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            tBox_Name = new TextBox();
+            label2 = new Label();
+            tBox_price = new TextBox();
+            label3 = new Label();
+            but_save = new Button();
+            but_censel = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Назва";
+            label1.AutoSize = true;
+            label1.Location = new Point(107, 120);
+            label1.Name = "label1";
+            label1.Size = new Size(51, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Назва";
             // 
             // tBox_Name
             // 
-            this.tBox_Name.Location = new System.Drawing.Point(176, 113);
-            this.tBox_Name.Name = "tBox_Name";
-            this.tBox_Name.Size = new System.Drawing.Size(207, 27);
-            this.tBox_Name.TabIndex = 1;
+            tBox_Name.Location = new Point(176, 113);
+            tBox_Name.Name = "tBox_Name";
+            tBox_Name.Size = new Size(207, 27);
+            tBox_Name.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(221, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Зміна";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(221, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 25);
+            label2.TabIndex = 2;
+            label2.Text = "Зміна";
             // 
             // tBox_price
             // 
-            this.tBox_price.Location = new System.Drawing.Point(176, 161);
-            this.tBox_price.Name = "tBox_price";
-            this.tBox_price.Size = new System.Drawing.Size(207, 27);
-            this.tBox_price.TabIndex = 4;
+            tBox_price.Location = new Point(176, 161);
+            tBox_price.Name = "tBox_price";
+            tBox_price.Size = new Size(207, 27);
+            tBox_price.TabIndex = 4;
+            tBox_price.Text = "0";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Ціна";
+            label3.AutoSize = true;
+            label3.Location = new Point(107, 168);
+            label3.Name = "label3";
+            label3.Size = new Size(41, 20);
+            label3.TabIndex = 3;
+            label3.Text = "Ціна";
             // 
             // but_save
             // 
-            this.but_save.Location = new System.Drawing.Point(176, 213);
-            this.but_save.Name = "but_save";
-            this.but_save.Size = new System.Drawing.Size(94, 29);
-            this.but_save.TabIndex = 5;
-            this.but_save.Text = "Зберегти";
-            this.but_save.UseVisualStyleBackColor = true;
+            but_save.DialogResult = DialogResult.OK;
+            but_save.Location = new Point(176, 213);
+            but_save.Name = "but_save";
+            but_save.Size = new Size(94, 29);
+            but_save.TabIndex = 5;
+            but_save.Text = "Зберегти";
+            but_save.UseVisualStyleBackColor = true;
             // 
             // but_censel
             // 
-            this.but_censel.Location = new System.Drawing.Point(289, 213);
-            this.but_censel.Name = "but_censel";
-            this.but_censel.Size = new System.Drawing.Size(94, 29);
-            this.but_censel.TabIndex = 6;
-            this.but_censel.Text = "Відміна";
-            this.but_censel.UseVisualStyleBackColor = true;
+            but_censel.DialogResult = DialogResult.Cancel;
+            but_censel.Location = new Point(289, 213);
+            but_censel.Name = "but_censel";
+            but_censel.Size = new Size(94, 29);
+            but_censel.TabIndex = 6;
+            but_censel.Text = "Відміна";
+            but_censel.UseVisualStyleBackColor = true;
             // 
             // Form_changes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 395);
-            this.Controls.Add(this.but_censel);
-            this.Controls.Add(this.but_save);
-            this.Controls.Add(this.tBox_price);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tBox_Name);
-            this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(578, 442);
-            this.Name = "Form_changes";
-            this.Text = "Form_changes";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(560, 395);
+            Controls.Add(but_censel);
+            Controls.Add(but_save);
+            Controls.Add(tBox_price);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(tBox_Name);
+            Controls.Add(label1);
+            MaximumSize = new Size(578, 442);
+            Name = "Form_changes";
+            Text = "Form_changes";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
